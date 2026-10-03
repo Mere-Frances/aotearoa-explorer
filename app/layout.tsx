@@ -1,4 +1,5 @@
 import './globals.scss';
+import Nav from '@/components/Nav';
 
 import type { Metadata } from 'next';
 import { Bricolage_Grotesque } from 'next/font/google';
@@ -32,6 +33,8 @@ export default function RootLayout({
         <a className="skip-link" href="#main">
           Skip to content
         </a>
+        {/* nav */}
+        <Nav />
         <main id="main">{children}</main>
         <footer className="site-footer">
           <p>
