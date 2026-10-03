@@ -1,0 +1,248 @@
+[
+  {
+    "id": "queenstown",
+    "image": "https://images.unsplash.com/photo-1530656131887-4765f003e900?auto=format&fit=crop&w=2000&q=80",
+    "photographer": "Photoholgic",
+    "photoUrl": "https://unsplash.com/photos/body-of-water-with-city-and-mountains-6EXdJNbjxV0",
+    "name": "Queenstown",
+    "maoriName": "Tāhuna",
+    "island": "South Island",
+    "region": "Otago",
+    "landscape": "mountains",
+    "tagline": "Lakeside town ringed by mountains, known for adventure sports.",
+    "description": "Queenstown sits on the shore of Lake Wakatipu with the Remarkables range rising behind it. It's best known for adventure activities like bungy jumping, jet boating and skiing, but it's also a base for wine tasting in the Gibbston Valley and day trips into Fiordland.",
+    "highlights": [
+      "Skyline Gondola up Bob's Peak",
+      "Kawarau Bridge, the world's first commercial bungy site",
+      "Lake Wakatipu cruises on the TSS Earnslaw steamship",
+      "Arrowtown's gold-rush main street"
+    ],
+    "activities": [
+      "Bungy jumping",
+      "Jet boating",
+      "Skiing",
+      "Wine tasting",
+      "Hiking"
+    ],
+    "bestTime": "December to February for summer activities, June to August for skiing."
+  },
+  {
+    "id": "rotorua",
+    "image": "https://images.unsplash.com/photo-1566141770181-fc2139b62828?auto=format&fit=crop&w=2000&q=80",
+    "photographer": "Yoann Laheurte",
+    "photoUrl": "https://unsplash.com/photos/rocky-shore-during-day-PSSxMRmqkQQ",
+    "name": "Rotorua",
+    "maoriName": "Te Rotorua-nui-a-Kahumatamomoe",
+    "island": "North Island",
+    "region": "Bay of Plenty",
+    "landscape": "geothermal",
+    "tagline": "Geysers, bubbling mud and a centre of Māori culture.",
+    "description": "Rotorua sits on an active geothermal field, so steam rises from parks, lakes and roadsides all over town. It's also one of the best places in the country to experience Māori culture, with kapa haka performances, marae visits and hāngī meals.",
+    "highlights": [
+      "Pōhutu Geyser at Te Puia",
+      "Whakarewarewa, the living Māori village",
+      "Redwoods Whakarewarewa Forest and its treetop walk",
+      "Hot pools on the edge of Lake Rotorua"
+    ],
+    "activities": [
+      "Geothermal walks",
+      "Cultural performances",
+      "Mountain biking",
+      "Hot pools"
+    ],
+    "bestTime": "Year-round. The hot pools are especially good in winter, June to August."
+  },
+  {
+    "id": "milford-sound",
+    "image": "https://images.unsplash.com/photo-1591640040362-f55d95a6b2bc?auto=format&fit=crop&w=2000&q=80",
+    "photographer": "Sébastien Goldberg",
+    "photoUrl": "https://unsplash.com/photos/body-of-water-near-mountain-under-blue-sky-during-daytime-oXgPDa0OtAk",
+    "name": "Milford Sound",
+    "maoriName": "Piopiotahi",
+    "island": "South Island",
+    "region": "Southland",
+    "landscape": "fiord",
+    "tagline": "A fiord of sheer cliffs and waterfalls in Fiordland National Park.",
+    "description": "Milford Sound is a fiord carved by glaciers, with cliffs rising straight out of the water and Mitre Peak standing at its centre. It's one of the wettest places in New Zealand, which is good news: heavy rain sends hundreds of temporary waterfalls down the rock walls. The drive in from Te Anau along the Milford Road is part of the experience.",
+    "highlights": [
+      "Mitre Peak",
+      "Stirling Falls and Lady Bowen Falls",
+      "Fur seals and dolphins seen from the boat cruises",
+      "The Homer Tunnel on the Milford Road"
+    ],
+    "activities": ["Boat cruises", "Kayaking", "Scenic flights", "Hiking"],
+    "bestTime": "November to April. Go on a rainy day to see the most waterfalls."
+  },
+  {
+    "id": "wellington",
+    "image": "https://images.unsplash.com/photo-1639508693225-02abb67ecf0f?auto=format&fit=crop&w=2000&q=80",
+    "photographer": "João Marcelo Martins",
+    "photoUrl": "https://unsplash.com/photos/a-red-train-traveling-down-tracks-next-to-a-lush-green-hillside-esv9rsglRSc",
+    "name": "Wellington",
+    "maoriName": "Te Whanganui-a-Tara",
+    "island": "North Island",
+    "region": "Wellington",
+    "landscape": "city",
+    "tagline": "The compact, windy capital, full of museums, cafés and harbour views.",
+    "description": "Wellington is New Zealand's capital, squeezed between a large harbour and steep green hills. The city centre is small enough to explore on foot, and it's known for its café culture, craft beer and creative scene.",
+    "highlights": [
+      "Te Papa Tongarewa, the national museum",
+      "The Wellington Cable Car up to the Botanic Garden",
+      "Zealandia Te Māra a Tāne, a fenced urban eco-sanctuary",
+      "Cuba Street's cafés and shops"
+    ],
+    "activities": [
+      "Museums",
+      "Food and coffee",
+      "Walking",
+      "Wildlife spotting"
+    ],
+    "bestTime": "December to March, when the weather is warmest and calmest."
+  },
+  {
+    "id": "auckland",
+    "image": "https://images.unsplash.com/photo-1602847189686-6bb361a3066d?auto=format&fit=crop&w=2000&q=80",
+    "photographer": "Sulthan Auliya",
+    "photoUrl": "https://unsplash.com/photos/city-skyline-across-body-of-water-during-daytime-CSCoasDuU2U",
+    "name": "Auckland",
+    "maoriName": "Tāmaki Makaurau",
+    "island": "North Island",
+    "region": "Auckland",
+    "landscape": "city",
+    "tagline": "The biggest city, spread across volcanic cones and two harbours.",
+    "description": "Auckland is home to about a third of New Zealand's population. It's built on a field of around 50 volcanoes and sits between the Waitematā and Manukau harbours, so beaches, islands and walking tracks are never far from the city centre.",
+    "highlights": [
+      "Sky Tower views over the city",
+      "The crater of Maungawhau / Mount Eden",
+      "A ferry to Waiheke Island for beaches and vineyards",
+      "Rangitoto Island, the region's youngest volcano"
+    ],
+    "activities": [
+      "Sailing",
+      "Island hopping",
+      "Food markets",
+      "Volcano walks"
+    ],
+    "bestTime": "November to April for beaches and island trips."
+  },
+  {
+    "id": "bay-of-islands",
+    "image": "https://images.unsplash.com/photo-1593210563043-6bec3f4bebee?auto=format&fit=crop&w=2000&q=80",
+    "photographer": "Linde Lanjouw",
+    "photoUrl": "https://unsplash.com/photos/green-trees-near-blue-sea-under-blue-sky-during-daytime-0QL6fdUEFSQ",
+    "name": "Bay of Islands",
+    "maoriName": "Pēwhairangi",
+    "island": "North Island",
+    "region": "Northland",
+    "landscape": "coast",
+    "tagline": "A subtropical bay of 144 islands, calm water and deep history.",
+    "description": "The Bay of Islands is a subtropical stretch of coast with 144 islands, sheltered beaches and warm summers. It's also one of the most important historic sites in the country: Te Tiriti o Waitangi was first signed at Waitangi in 1840. Paihia and Russell are the main towns to stay in.",
+    "highlights": [
+      "Waitangi Treaty Grounds",
+      "A cruise out to the Hole in the Rock at Motukōkako",
+      "Historic Russell, once called Kororāreka",
+      "Dolphin watching"
+    ],
+    "activities": ["Sailing", "Swimming", "Fishing", "History tours"],
+    "bestTime": "November to April, when the water is warm enough for swimming."
+  },
+  {
+    "id": "aoraki-mount-cook",
+    "image": "https://images.unsplash.com/photo-1672455352763-cb38f2a4c9b4?auto=format&fit=crop&w=2000&q=80",
+    "photographer": "James Pere",
+    "photoUrl": "https://unsplash.com/photos/a-large-body-of-water-surrounded-by-mountains-dC5zJjCEB9g",
+    "name": "Aoraki / Mount Cook",
+    "maoriName": null,
+    "island": "South Island",
+    "region": "Canterbury",
+    "landscape": "mountains",
+    "tagline": "The country's highest mountain, with glaciers and clear night skies.",
+    "description": "At 3,724 metres, Aoraki / Mount Cook is the highest peak in New Zealand. The national park around it is mostly ice and rock, with the Tasman Glacier, the country's longest, running down the valley. The area is part of the Aoraki Mackenzie International Dark Sky Reserve, so the stargazing is exceptional.",
+    "highlights": [
+      "Hooker Valley Track to a glacier lake with floating ice",
+      "Boat trips on the Tasman Glacier lake",
+      "Sir Edmund Hillary Alpine Centre",
+      "Guided stargazing tours"
+    ],
+    "activities": [
+      "Hiking",
+      "Stargazing",
+      "Scenic flights",
+      "Glacier boat tours"
+    ],
+    "bestTime": "November to March for hiking. Winter brings long, dark nights for stargazing."
+  },
+  {
+    "id": "tongariro",
+    "image": "https://images.unsplash.com/photo-1585050821162-aa815e20e0d0?auto=format&fit=crop&w=2000&q=80",
+    "photographer": "Adrien Aletti",
+    "photoUrl": "https://unsplash.com/photos/brown-and-gray-mountain-under-blue-sky-during-daytime-SmT849jkljo",
+    "name": "Tongariro National Park",
+    "maoriName": null,
+    "island": "North Island",
+    "region": "Manawatū-Whanganui",
+    "landscape": "volcanic",
+    "tagline": "Three active volcanoes and the country's best-known day walk.",
+    "description": "Tongariro was New Zealand's first national park, gifted to the nation in 1887 by Ngāti Tūwharetoa paramount chief Te Heuheu Tūkino IV. Its three active volcanoes, Ruapehu, Ngāuruhoe and Tongariro, make a landscape of craters, lava flows and bright emerald lakes. It's a UNESCO World Heritage Area for both its natural and cultural values.",
+    "highlights": [
+      "The Tongariro Alpine Crossing",
+      "The Emerald Lakes",
+      "Skiing at Whakapapa and Tūroa on Mount Ruapehu",
+      "Taranaki Falls walk"
+    ],
+    "activities": ["Hiking", "Skiing", "Mountain biking", "Photography"],
+    "bestTime": "November to April for the Alpine Crossing, July to October for skiing."
+  },
+  {
+    "id": "kaikoura",
+    "image": "https://images.unsplash.com/photo-1718398892729-2fbb9a8725ee?auto=format&fit=crop&w=2000&q=80",
+    "photographer": "Rodrigo Kammer",
+    "photoUrl": "https://unsplash.com/photos/a-scenic-view-of-the-ocean-and-mountains-v4NNY7IMAas",
+    "name": "Kaikōura",
+    "maoriName": null,
+    "island": "South Island",
+    "region": "Canterbury",
+    "landscape": "coast",
+    "tagline": "Whales, dolphins and seals, with snowy mountains right above the sea.",
+    "description": "Kaikōura is a small coastal town where the Seaward Kaikōura Range drops almost straight into the Pacific. A deep undersea canyon just offshore brings rich water close to shore, making it one of the best places in the world to see sperm whales. The name means 'meal of crayfish', and crayfish is still on menus all along the coast.",
+    "highlights": [
+      "Whale watching boat tours",
+      "Swimming with dusky dolphins",
+      "The fur seal colony on the Kaikōura Peninsula Walkway",
+      "Fresh crayfish from roadside seafood stalls"
+    ],
+    "activities": [
+      "Whale watching",
+      "Wildlife tours",
+      "Coastal walks",
+      "Seafood"
+    ],
+    "bestTime": "Year-round. The sperm whales live here all year."
+  },
+  {
+    "id": "waitomo",
+    "image": "https://images.unsplash.com/photo-1666072958408-7b63853b46db?auto=format&fit=crop&w=2000&q=80",
+    "photographer": "Luca Calderone",
+    "photoUrl": "https://unsplash.com/photos/a-tree-with-lights-_3HxTTOGPqQ",
+    "name": "Waitomo Caves",
+    "maoriName": null,
+    "island": "North Island",
+    "region": "Waikato",
+    "landscape": "caves",
+    "tagline": "Limestone caves lit by thousands of glowworms.",
+    "description": "Under the green hills of the King Country is a network of limestone caves. In the best-known one, you drift through the dark in a boat under thousands of tiny glowing lights. The name comes from 'wai' (water) and 'tomo' (hole or shaft), describing streams that disappear underground.",
+    "highlights": [
+      "A boat ride through the Waitomo Glowworm Cave",
+      "Ruakuri Cave's spiral entrance",
+      "Black-water rafting on underground rivers",
+      "Mangapōhue Natural Bridge walk"
+    ],
+    "activities": [
+      "Cave tours",
+      "Black-water rafting",
+      "Abseiling",
+      "Short walks"
+    ],
+    "bestTime": "Year-round. The caves stay about the same temperature all year."
+  }
+]
