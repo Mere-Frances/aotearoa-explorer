@@ -1,0 +1,173 @@
+// built in functions
+@use 'sass:color';
+@use 'sass:map';
+
+// VARIABLES
+// -------------------------
+// -------------------------
+
+// colors
+$bg: #e8efec;
+$secondaryColor: #fbfdfc;
+$textColor: #173a33;
+$links: #2f7d62;
+$lightGreen: #6e9f92;
+$active: #f5c518;
+
+$textMuted: color.mix($textColor, $bg, 75%);
+$rule: color.mix($textColor, $bg, 20%);
+
+// fonts
+$font: var(--font-bricolage), 'Segoe UI', system-ui, -apple-system, sans-serif;
+
+// layouts
+$page-max: 72rem;
+$gutter: clamp(1rem, 4vw, 2.5rem);
+$art-radius: 18px;
+$nav-height: 3.75rem;
+
+$breakpoints: (
+  'sm': 36rem,
+  'md': 48rem,
+  'lg': 64rem
+);
+
+// animations
+$ease-out: cubic-bezier(0.22, 0.61, 0.36, 1);
+$card-stagger: 50ms;
+
+@keyframes page-in {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: none; }
+}
+
+// MIXINS
+// -------------------------
+// -------------------------
+
+// @include from('md') {}
+@mixin from($size) {
+  @media (min-width: map.get($breakpoints, $size)) {
+    @content;
+  }
+}
+
+@mixin motion {
+  @media (prefers-reduced-motion: no-preference) {
+    @content;
+  }
+}
+
+// center content
+@mixin page-inline {
+  padding-inline: max(#{$gutter}, calc((100% - #{$page-max}) / 2));
+}
+
+// yellow outline
+@mixin focus-ring {
+  outline: 3px solid $active;
+  outline-offset: 3px;
+}
+
+// FOUNDATIONS
+// -------------------------
+// -------------------------
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: $font;
+  font-optical-sizing: auto;
+  font-size: 1.0625rem;
+  line-height: 1.55;
+  color: $textColor;
+  background: $bg;
+  overflow-wrap: break-word;
+}
+
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: $links;
+  text-underline-offset: 0.18em;
+  transition: color 0.2s ease;
+
+  &:hover {
+    color: $textColor;
+  }
+}
+
+a,
+button,
+input,
+select {
+  &:focus-visible {
+    @include focus-ring;
+  }
+}
+
+h1,
+h2,
+h3 {
+  margin: 0;
+  line-height: 1.1;
+}
+
+p {
+  margin: 0;
+}
+
+code {
+  font-size: 0.9em;
+  background: $secondaryColor;
+  border: 1px solid $rule;
+  border-radius: 4px;
+  padding: 0.05em 0.35em;
+}
+
+// -----------------------------------------------------------------
+
+// skip link
+.skip-link {
+  position: absolute;
+  left: 1rem;
+  top: -4rem;
+  z-index: 30;
+  padding: 0.6rem 1rem;
+  background: $active;
+  color: $textColor;
+  font-weight: 700;
+  border-radius: 0 0 8px 8px;
+
+  &:focus {
+    top: 0;
+  }
+}
+
+// page fade in
+.page {
+  @include motion {
+    animation: page-in 0.4s $ease-out both;
+  }
+}
+
+// footer
+.site-footer {
+  @include page-inline;
+  padding-block: 2rem 2.5rem;
+  border-top: 1px solid $rule;
+  color: $textMuted;
+  font-size: 0.9rem;
+}
