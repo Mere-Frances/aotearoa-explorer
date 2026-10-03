@@ -18,7 +18,12 @@ $textMuted: color.mix($textColor, $bg, 75%);
 $rule: color.mix($textColor, $bg, 20%);
 
 // fonts
-$font: var(--font-bricolage), 'Segoe UI', system-ui, -apple-system, sans-serif;
+$font:
+  var(--font-bricolage),
+  'Segoe UI',
+  system-ui,
+  -apple-system,
+  sans-serif;
 
 // layouts
 $page-max: 72rem;
@@ -29,7 +34,7 @@ $nav-height: 3.75rem;
 $breakpoints: (
   'sm': 36rem,
   'md': 48rem,
-  'lg': 64rem
+  'lg': 64rem,
 );
 
 // animations
@@ -37,8 +42,14 @@ $ease-out: cubic-bezier(0.22, 0.61, 0.36, 1);
 $card-stagger: 50ms;
 
 @keyframes page-in {
-  from { opacity: 0; transform: translateY(8px); }
-  to   { opacity: 1; transform: none; }
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
 }
 
 // MIXINS
@@ -170,4 +181,219 @@ code {
   border-top: 1px solid $rule;
   color: $textMuted;
   font-size: 0.9rem;
+}
+
+// -----------------------------------------------------------------
+
+// NAV
+.site-nav {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  background: $textColor;
+  color: $bg;
+
+  &__inner {
+    @include page-inline;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    min-height: $nav-height;
+  }
+
+  &__brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.55rem;
+    color: $bg;
+    font-size: 1.05rem;
+    font-weight: 700;
+    text-decoration: none;
+
+    svg {
+      width: 30px;
+      height: auto;
+    }
+
+    &:hover {
+      color: $bg;
+    }
+  }
+
+  // hamburger menu
+  &__toggle {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.55rem;
+    padding: 0.45rem 0.85rem;
+    font: inherit;
+    font-weight: 600;
+    color: $bg;
+    background: transparent;
+    border: 2px solid color.mix($bg, $textColor, 30%);
+    border-radius: 999px;
+    cursor: pointer;
+    transition: border-color 0.2s ease;
+
+    &:hover {
+      border-color: $bg;
+    }
+
+    @include from('md') {
+      display: none;
+    }
+  }
+
+  // hamburger button
+  &__bars {
+    position: relative;
+    width: 18px;
+    height: 12px;
+
+    span {
+      position: absolute;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background: currentColor;
+      border-radius: 2px;
+      transition:
+        transform 0.25s $ease-out,
+        opacity 0.2s ease;
+
+      &:nth-child(1) {
+        top: 0;
+      }
+      &:nth-child(2) {
+        top: 5px;
+      }
+      &:nth-child(3) {
+        top: 10px;
+      }
+    }
+  }
+
+  &.is-open &__bars span {
+    &:nth-child(1) {
+      transform: translateY(5px) rotate(45deg);
+    }
+    &:nth-child(2) {
+      opacity: 0;
+    }
+    &:nth-child(3) {
+      transform: translateY(-5px) rotate(-45deg);
+    }
+  }
+
+  // open hamburger
+  &__menu {
+    @include page-inline;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    padding-block: 0.25rem 1.25rem;
+    background: $textColor;
+    border-top: 1px solid color.mix($bg, $textColor, 18%);
+    box-shadow: 0 14px 24px color.change($textColor, $alpha: 0.3);
+    opacity: 0;
+    visibility: hidden;
+    transition:
+      opacity 0.2s ease,
+      visibility 0s linear 0.2s;
+
+    @include motion {
+      transform: translateY(-8px);
+      transition:
+        opacity 0.2s ease,
+        transform 0.25s $ease-out,
+        visibility 0s linear 0.25s;
+    }
+
+    @include from('md') {
+      position: static;
+      padding: 0;
+      background: none;
+      border: 0;
+      box-shadow: none;
+      opacity: 1;
+      visibility: visible;
+      transform: none;
+      transition: none;
+    }
+  }
+
+  &.is-open &__menu {
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+    transition:
+      opacity 0.2s ease,
+      transform 0.25s $ease-out,
+      visibility 0s;
+  }
+
+  &__list {
+    display: grid;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    @include from('md') {
+      display: flex;
+      gap: 1.75rem;
+    }
+  }
+
+  &__link {
+    position: relative;
+    display: block;
+    padding: 0.85rem 0;
+    color: $bg;
+    font-size: 1.1rem;
+    font-weight: 600;
+    text-decoration: none;
+    border-bottom: 1px solid color.mix($bg, $textColor, 14%);
+
+    @include from('md') {
+      padding: 0.3rem 0;
+      font-size: 0.98rem;
+      border-bottom: 0;
+    }
+
+    // active line
+    &::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: 0.45rem;
+      width: 2.5rem;
+      height: 3px;
+      border-radius: 2px;
+      background: $active;
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.25s $ease-out;
+
+      @include from('md') {
+        bottom: -0.15rem;
+        width: 100%;
+      }
+    }
+
+    &:hover {
+      color: $bg;
+
+      &::after {
+        transform: scaleX(1);
+        background: $lightGreen;
+      }
+    }
+
+    &[aria-current='page']::after {
+      transform: scaleX(1);
+      background: $active;
+    }
+  }
 }
