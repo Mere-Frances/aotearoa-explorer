@@ -1,17 +1,5 @@
-import { destinations } from '@/lib/destinations';
-import Hero from '@/components/Hero';
+import DestinationList from '@/components/DestinationList';
 
 export default function HomePage() {
-  return (
-    <>
-      <Hero count={destinations.length} />
-      <ul>
-        {destinations.map((d) => (
-          <li key={d.id}>
-            {d.name}, {d.region}
-          </li>
-        ))}
-      </ul>
-    </>
-  );
+  return <DestinationList />;
 }
