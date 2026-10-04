@@ -41,7 +41,11 @@ export default function RootLayout({
             Destination information is sample.
             <br />
             {/* stored in <code>data/destinations.json</code>. */}
-            Photos from <a href="https://unsplash.com">Unsplash</a>.
+            Photos from{' '}
+            <a href="https://unsplash.com" target="_blank">
+              Unsplash
+            </a>
+            .
           </p>
         </footer>
       </body>
