@@ -75,6 +75,17 @@ $card-stagger: 50ms;
   }
 }
 
+@keyframes option-in {
+  from {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
 // MIXINS
 // -------------------------
 // -------------------------
@@ -489,6 +500,295 @@ code {
         animation: fade-up 0.7s $ease-out 0.12s both;
       }
     }
+  }
+}
+
+// -----------------------------------------------------------------
+
+// FILTERS
+.filters {
+  @include page-inline;
+  display: grid;
+  gap: 1.25rem 1.5rem;
+  margin-top: 2.5rem;
+  scroll-margin-top: $nav-height + 1.25rem;
+
+  @include from('md') {
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: end;
+
+    > :first-child {
+      grid-column: 1 / -1;
+    }
+  }
+
+  @include from('lg') {
+    grid-template-columns: minmax(0, 1.4fr) auto minmax(0, 1fr);
+
+    > :first-child {
+      grid-column: auto;
+    }
+  }
+
+  &__field {
+    min-width: 0;
+    margin: 0;
+    padding: 0;
+    border: 0;
+  }
+
+  &__label {
+    display: block;
+    margin-bottom: 0.4rem;
+    padding: 0;
+    font-size: 0.95rem;
+    font-weight: 600;
+  }
+
+  &__input {
+    width: 100%;
+    padding: 0.7rem 0.85rem;
+    font: inherit;
+    color: $textColor;
+    background: $secondaryColor;
+    border: 2px solid $rule;
+    border-radius: 10px;
+    transition: border-color 0.2s ease;
+
+    &:hover {
+      border-color: color.mix($textColor, $bg, 40%);
+    }
+
+    &:focus-visible {
+      border-color: $links;
+    }
+  }
+}
+
+// island filter button
+.segmented {
+  display: flex;
+  max-width: 100%;
+  padding: 3px;
+  background: $secondaryColor;
+  border: 2px solid $rule;
+  border-radius: 999px;
+
+  @include from('md') {
+    display: inline-flex;
+  }
+
+  &__option {
+    position: relative;
+    flex: 1 1 auto;
+
+    input {
+      position: absolute;
+      inset: 0;
+      margin: 0;
+      opacity: 0;
+      cursor: pointer;
+    }
+
+    span {
+      display: block;
+      padding: 0.5rem clamp(0.55rem, 2.5vw, 0.95rem);
+      text-align: center;
+      border-radius: 999px;
+      font-size: 0.95rem;
+      font-weight: 600;
+      white-space: nowrap;
+      transition:
+        background-color 0.25s ease,
+        color 0.25s ease;
+    }
+
+    input:hover + span {
+      background: color.mix($textColor, $secondaryColor, 8%);
+    }
+
+    input:checked + span {
+      background: $textColor;
+      color: $bg;
+    }
+
+    input:focus-visible + span {
+      @include focus-ring;
+    }
+  }
+}
+
+// landscape dropdown filter
+.select {
+  position: relative;
+
+  &__button {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.75rem;
+    width: 100%;
+    padding: 0.7rem 0.85rem;
+    color: $textColor;
+    background: $secondaryColor;
+    border: 2px solid $rule;
+    border-radius: 10px;
+    cursor: pointer;
+    user-select: none;
+    transition: border-color 0.2s ease;
+
+    &:hover {
+      border-color: color.mix($textColor, $bg, 40%);
+    }
+
+    &:focus-visible {
+      border-color: $links;
+    }
+  }
+
+  //   open styling
+  &.is-open &__button {
+    border-color: $links;
+  }
+
+  //   arrow animation
+  &__chevron {
+    flex: none;
+    width: 18px;
+    height: 18px;
+    transition: transform 0.3s $ease-out;
+  }
+
+  &.is-open &__chevron {
+    transform: rotate(180deg);
+  }
+
+  &__list {
+    position: absolute;
+    z-index: 10;
+    top: calc(100% + 0.4rem);
+    left: 0;
+    right: 0;
+    max-height: min(18rem, 60vh);
+    margin: 0;
+    padding: 0.35rem;
+    overflow-y: auto;
+    list-style: none;
+    background: $secondaryColor;
+    border: 2px solid $rule;
+    border-radius: 14px;
+    box-shadow: 0 18px 40px color.change($textColor, $alpha: 0.18);
+    opacity: 0;
+    visibility: hidden;
+    transition:
+      opacity 0.18s ease,
+      visibility 0s linear 0.18s;
+
+    @include motion {
+      transform: translateY(-10px) scale(0.97);
+      transform-origin: top center;
+      transition:
+        opacity 0.18s ease,
+        transform 0.25s $ease-out,
+        visibility 0s linear 0.25s;
+    }
+  }
+
+  //   open
+  &.is-open &__list {
+    opacity: 1;
+    visibility: visible;
+    transition:
+      opacity 0.18s ease,
+      visibility 0s;
+
+    @include motion {
+      transform: none;
+      transition:
+        opacity 0.18s ease,
+        transform 0.25s $ease-out,
+        visibility 0s;
+    }
+  }
+
+  // list rows
+  &__option {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.75rem;
+    padding: 0.65rem 0.75rem;
+    border-radius: 8px;
+    font-weight: 500;
+    cursor: pointer;
+    transition:
+      background-color 0.15s ease,
+      color 0.15s ease;
+
+    &.is-active {
+      background: color.mix($textColor, $secondaryColor, 8%);
+    }
+
+    // selected row
+    &[aria-selected='true'] {
+      color: $links;
+      font-weight: 700;
+    }
+  }
+
+  &.is-open &__option {
+    @include motion {
+      animation: option-in 0.3s $ease-out both;
+      animation-delay: calc(var(--i) * 25ms);
+    }
+  }
+
+  &__check {
+    flex: none;
+    width: 16px;
+    height: 16px;
+  }
+}
+
+// result count
+.results-count {
+  @include page-inline;
+  margin-top: 1.75rem;
+  margin-bottom: 1rem;
+  color: $textMuted;
+  font-size: 0.95rem;
+}
+
+.empty {
+  @include page-inline;
+  padding-bottom: 4.5rem;
+
+  @include motion {
+    animation: fade-up 0.4s $ease-out both;
+  }
+
+  &__text {
+    max-width: 50ch;
+    margin-bottom: 1rem;
+  }
+}
+
+.button {
+  display: inline-block;
+  padding: 0.7rem 1.25rem;
+  font: inherit;
+  font-weight: 600;
+  color: $bg;
+  text-decoration: none;
+  background: $textColor;
+  border: 0;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+
+  &:hover {
+    color: $bg;
+    background: $links;
   }
 }
 
