@@ -52,6 +52,11 @@ $card-stagger: 50ms;
   }
 }
 
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(14px); }
+  to   { opacity: 1; transform: none; }
+}
+
 // MIXINS
 // -------------------------
 // -------------------------
@@ -394,6 +399,49 @@ code {
     &[aria-current='page']::after {
       transform: scaleX(1);
       background: $active;
+    }
+  }
+}
+
+// -----------------------------------------------------------------
+
+// hero
+.hero {
+    // ovedrlay
+    background:
+    linear-gradient(color.change($textColor, $alpha: 0.5), color.change($textColor, $alpha: 0.75)),
+    url('/hero.jpg') center / cover no-repeat;
+  color: $bg;
+
+  &__inner {
+    @include page-inline;
+    padding-top: clamp(3rem, 10vw, 7rem);
+    padding-bottom: clamp(3rem, 10vw, 7rem);
+  }
+
+  &__title {
+    max-width: 11ch;
+    font-size: clamp(2.75rem, 8vw, 6rem);
+    font-weight: 800;
+    line-height: 0.95;
+    letter-spacing: -0.035em;
+  }
+
+  &__intro {
+    max-width: 44ch;
+    margin-top: 1.25rem;
+    font-size: 1.15rem;
+  }
+
+  &--intro {
+    @include motion {
+      .hero__title {
+        animation: fade-up 0.7s $ease-out both;
+      }
+
+      .hero__intro {
+        animation: fade-up 0.7s $ease-out 0.12s both;
+      }
     }
   }
 }
