@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import type { Destination } from '@/lib/destinations';
+import Image from 'next/image';
 
 type Props = {
   destination: Destination;
@@ -14,7 +15,14 @@ export default function DestinationCard({
   return (
     <li className="destination-card">
       <Link className="destination-card__link" href={`/destinations/${d.id}`}>
-        <div className="destination-card__art" />
+        <div className="destination-card__art">
+          <Image
+            src={d.image}
+            alt=""
+            fill
+            sizes="(min-width: 1024px) 25vw, (min-width: 576px) 50vw, 100vw"
+          />
+        </div>
         <Heading className="destination-card__name">{d.name}</Heading>
         {d.maoriName && (
           <p className="destination-card__maori" lang="mi">

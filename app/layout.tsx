@@ -39,7 +39,9 @@ export default function RootLayout({
         <footer className="site-footer">
           <p>
             Destination information is sample.
+            <br />
             {/* stored in <code>data/destinations.json</code>. */}
+            Photos from <a href="https://unsplash.com">Unsplash</a>.
           </p>
         </footer>
       </body>
