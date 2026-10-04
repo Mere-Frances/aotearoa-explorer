@@ -409,7 +409,7 @@ code {
 .hero {
     // ovedrlay
     background:
-    linear-gradient(color.change($textColor, $alpha: 0.5), color.change($textColor, $alpha: 0.75)),
+    linear-gradient(color.change($textColor, $alpha: 0.3), color.change($textColor, $alpha: 0.6)),
     url('/hero.jpg') center / cover no-repeat;
   color: $bg;
 
