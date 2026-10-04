@@ -31,3 +31,19 @@ export type Destination = {
 export const destinations = data as Destination[];
 
 // each landscape type...
+export const LANDSCAPES: Record<
+  Landscape,
+  { label: string; singular: string }
+> = {
+  mountains: { label: 'Mountains', singular: 'Mountains' },
+  fiord: { label: 'Fiords', singular: 'Fiord' },
+  geothermal: { label: 'Geothermal', singular: 'Geothermal' },
+  volcanic: { label: 'Volcanoes', singular: 'Volcanic' },
+  coast: { label: 'Coast', singular: 'Coast' },
+  city: { label: 'Cities', singular: 'City' },
+  caves: { label: 'Caves', singular: 'Caves' },
+};
+
+export function getDestination(id: string) {
+  return destinations.find((d) => d.id === id);
+}
