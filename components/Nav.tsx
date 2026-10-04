@@ -26,7 +26,7 @@ export default function Nav() {
           href="/"
           onClick={() => setOpen(false)}
         >
-          <Image src="/logos.png" alt="" width={30} height={30} />
+          <Image src="/logos.png" alt="Kiwi drawing" />
           Aotearoa explorer
         </Link>
 
