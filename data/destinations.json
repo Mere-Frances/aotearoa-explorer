@@ -10,7 +10,7 @@
     "region": "Otago",
     "landscape": "mountains",
     "tagline": "Lakeside town ringed by mountains, known for adventure sports.",
-    "description": "Queenstown sits on the shore of Lake Wakatipu with the Remarkables range rising behind it. It's best known for adventure activities like bungy jumping, jet boating and skiing, but it's also a base for wine tasting in the Gibbston Valley and day trips into Fiordland.",
+    "description": "Queenstown sits on the shore of Lake Wakatipu with the Remarkables range rising behind it. It's best known for adventure activities like bungy jumping, jet boating and snowsports, but it's also a base for wine tasting in the Gibbston Valley and day trips into Fiordland.",
     "highlights": [
       "Skyline Gondola up Bob's Peak",
       "Kawarau Bridge, the world's first commercial bungy site",
@@ -21,10 +21,11 @@
       "Bungy jumping",
       "Jet boating",
       "Skiing",
+      "Snowboarding",
       "Wine tasting",
       "Hiking"
     ],
-    "bestTime": "December to February for summer activities, June to August for skiing."
+    "bestTime": "December to February for summer activities, June to August for skiing and snowboarding."
   },
   {
     "id": "rotorua",
@@ -187,11 +188,17 @@
     "highlights": [
       "The Tongariro Alpine Crossing",
       "The Emerald Lakes",
-      "Skiing at Whakapapa and Tūroa on Mount Ruapehu",
+      "Skiing or snowboardingat Whakapapa and Tūroa on Mount Ruapehu",
       "Taranaki Falls walk"
     ],
-    "activities": ["Hiking", "Skiing", "Mountain biking", "Photography"],
-    "bestTime": "November to April for the Alpine Crossing, July to October for skiing."
+    "activities": [
+      "Hiking",
+      "Skiing",
+      "Snowboarding",
+      "Mountain biking",
+      "Photography"
+    ],
+    "bestTime": "November to April for the Alpine Crossing, July to October for skiing or snowboarding."
   },
   {
     "id": "kaikoura",

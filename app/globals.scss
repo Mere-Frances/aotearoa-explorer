@@ -494,6 +494,163 @@ code {
 
 // -----------------------------------------------------------------
 
+// FILTERS
+.filters {
+  @include page-inline;
+  display: grid;
+  gap: 1.25rem 1.5rem;
+  margin-top: 2.5rem;
+  scroll-margin-top: $nav-height + 1.25rem;
+
+  @include from('md') {
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: end;
+
+    > :first-child {
+      grid-column: 1 / -1;
+    }
+  }
+
+  @include from('lg') {
+    grid-template-columns: minmax(0, 1.4fr) auto minmax(0, 1fr);
+
+    > :first-child {
+      grid-column: auto;
+    }
+  }
+
+  &__field {
+    min-width: 0;
+    margin: 0;
+    padding: 0;
+    border: 0;
+  }
+
+  &__label {
+    display: block;
+    margin-bottom: 0.4rem;
+    padding: 0;
+    font-size: 0.95rem;
+    font-weight: 600;
+  }
+
+  &__input {
+    width: 100%;
+    padding: 0.7rem 0.85rem;
+    font: inherit;
+    color: $textColor;
+    background: $secondaryColor;
+    border: 2px solid $rule;
+    border-radius: 10px;
+    transition: border-color 0.2s ease;
+
+    &:hover {
+      border-color: color.mix($textColor, $bg, 40%);
+    }
+
+    &:focus-visible {
+      border-color: $links;
+    }
+  }
+}
+
+// island filter button
+.segmented {
+  display: flex;
+  max-width: 100%;
+  padding: 3px;
+  background: $secondaryColor;
+  border: 2px solid $rule;
+  border-radius: 999px;
+
+  @include from('md') {
+    display: inline-flex;
+  }
+
+  &__option {
+    position: relative;
+    flex: 1 1 auto;
+
+    input {
+      position: absolute;
+      inset: 0;
+      margin: 0;
+      opacity: 0;
+      cursor: pointer;
+    }
+
+    span {
+      display: block;
+      padding: 0.5rem clamp(0.55rem, 2.5vw, 0.95rem);
+      text-align: center;
+      border-radius: 999px;
+      font-size: 0.95rem;
+      font-weight: 600;
+      white-space: nowrap;
+      transition:
+        background-color 0.25s ease,
+        color 0.25s ease;
+    }
+
+    input:hover + span {
+      background: color.mix($textColor, $secondaryColor, 8%);
+    }
+
+    input:checked + span {
+      background: $textColor;
+      color: $bg;
+    }
+
+    input:focus-visible + span {
+      @include focus-ring;
+    }
+  }
+}
+
+// result count
+.results-count {
+  @include page-inline;
+  margin-top: 1.75rem;
+  margin-bottom: 1rem;
+  color: $textMuted;
+  font-size: 0.95rem;
+}
+
+.empty {
+  @include page-inline;
+  padding-bottom: 4.5rem;
+
+  @include motion {
+    animation: fade-up 0.4s $ease-out both;
+  }
+
+  &__text {
+    max-width: 50ch;
+    margin-bottom: 1rem;
+  }
+}
+
+.button {
+  display: inline-block;
+  padding: 0.7rem 1.25rem;
+  font: inherit;
+  font-weight: 600;
+  color: $bg;
+  text-decoration: none;
+  background: $textColor;
+  border: 0;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+
+  &:hover {
+    color: $bg;
+    background: $links;
+  }
+}
+
+// -----------------------------------------------------------------
+
 // destination cxards
 .destination-grid {
   @include page-inline;

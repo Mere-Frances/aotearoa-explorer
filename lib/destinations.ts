@@ -47,3 +47,38 @@ export const LANDSCAPES: Record<
 export function getDestination(id: string) {
   return destinations.find((d) => d.id === id);
 }
+
+// able to search macrons
+function normalise(text: string) {
+  return text
+    .toLowerCase()
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '');
+}
+
+// return destinations that include search and island type
+export function filterDestinations(search: string, island: Island | 'all') {
+  // remove any stray spaces
+  const query = normalise(search.trim());
+
+  return destinations.filter((d) => {
+    if (island !== 'all' && d.island !== island) return false;
+
+    // search all
+    const text = normalise(
+      [
+        d.name,
+        d.maoriName,
+        d.region,
+        d.island,
+        d.tagline,
+        ...d.highlights,
+        ...d.activities,
+      ]
+        .filter(Boolean)
+        .join(' '),
+    );
+
+    return text.includes(query);
+  });
+}
