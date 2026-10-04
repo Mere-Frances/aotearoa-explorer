@@ -57,12 +57,18 @@ function normalise(text: string) {
 }
 
 // return destinations that include search and island type
-export function filterDestinations(search: string, island: Island | 'all') {
+export function filterDestinations(
+  search: string,
+  island: Island | 'all',
+  landscape: Landscape | 'all',
+) {
   // remove any stray spaces
   const query = normalise(search.trim());
 
   return destinations.filter((d) => {
     if (island !== 'all' && d.island !== island) return false;
+
+    if (landscape !== 'all' && d.landscape !== landscape) return false;
 
     // search all
     const text = normalise(

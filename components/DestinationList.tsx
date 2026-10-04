@@ -2,18 +2,34 @@
 
 import { useState } from 'react';
 import DestinationCard from './DestinationCard';
+import Select from './Select';
 import {
+  LANDSCAPES,
   destinations,
   filterDestinations,
   type Island,
+  type Landscape,
 } from '@/lib/destinations';
 import Hero from './Hero';
 
 // island type filter
 type IslandFilter = Island | 'all';
+// landscape type filter
+type LandscapeFilter = Landscape | 'all';
 
 // quick filter buttons
 const ISLANDS: IslandFilter[] = ['all', 'North Island', 'South Island'];
+
+// filter landscapes
+const LANDSCAPE_OPTIONS: { value: LandscapeFilter; label: string }[] = [
+  { value: 'all', label: 'All landscapes' },
+  ...(Object.entries(LANDSCAPES) as [Landscape, { label: string }][]).map(
+    ([value, info]) => ({
+      value,
+      label: info.label,
+    }),
+  ),
+];
 
 // adress
 const ISLAND_PATHS: Record<IslandFilter, string> = {
@@ -30,9 +46,10 @@ export default function DestinationList({
   // memory states
   const [search, setSearch] = useState('');
   const [island, setIsland] = useState<IslandFilter>(initialIsland);
+  const [landscape, setLandscape] = useState<LandscapeFilter>('all');
 
   // results
-  const matches = filterDestinations(search, island);
+  const matches = filterDestinations(search, island, landscape);
 
   //   both clicked
   function changeIsland(value: IslandFilter) {
@@ -46,6 +63,7 @@ export default function DestinationList({
   function clearFilters() {
     setSearch('');
     changeIsland('all');
+    setLandscape('all');
   }
 
   const shown =
@@ -93,6 +111,19 @@ export default function DestinationList({
             ))}
           </div>
         </fieldset>
+
+        {/* landscape dropdown filter */}
+        <div className="filters__field">
+          <span className="filters__label" id="landscape-label">
+            Landscape
+          </span>
+          <Select
+            labelId="landscape-label"
+            options={LANDSCAPE_OPTIONS}
+            value={landscape}
+            onChange={setLandscape}
+          />
+        </div>
       </section>
 
       {/* # of results */}
