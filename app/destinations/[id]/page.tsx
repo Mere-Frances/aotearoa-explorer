@@ -95,7 +95,6 @@ export default async function DestinationPage({ params }: Props) {
             <dd>{LANDSCAPES[d.landscape].singular}</dd>
             <dt>Best time to visit</dt>
             <dd>{d.bestTime}</dd>
-            <dt>Location</dt>
           </dl>
         </div>
       </header>
